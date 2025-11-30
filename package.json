@@ -1,0 +1,42 @@
+{
+  "name": "espn-mcp-server",
+  "version": "1.0.0",
+  "description": "MCP server for accessing ESPN sports data (NFL, NHL, NBA)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "espn-mcp-server": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "keywords": ["mcp", "espn", "sports", "nfl", "nhl", "nba", "claude"],
+  "license": "MIT",
+  "author": "Left Coast Tech <admin@leftcoasttech.ai>",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Left-Coast-Tech/espn-mcp.git"
+  },
+  "homepage": "https://github.com/Left-Coast-Tech/espn-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Left-Coast-Tech/espn-mcp/issues"
+  }
+}
