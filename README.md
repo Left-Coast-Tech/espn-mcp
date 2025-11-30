@@ -18,7 +18,7 @@ A Model Context Protocol (MCP) server that provides access to ESPN's public API 
 ## Installation
 
 ```bash
-npm install -g espn-mcp-server
+npm install -g @left-coast-tech/espn-mcp-server
 ```
 
 Or clone and build:
@@ -39,7 +39,7 @@ Add to your Claude Desktop config (`~/.config/claude/claude_desktop_config.json`
   "mcpServers": {
     "espn": {
       "command": "npx",
-      "args": ["espn-mcp-server"]
+      "args": ["@left-coast-tech/espn-mcp-server"]
     }
   }
 }
@@ -51,7 +51,7 @@ Or if installed globally:
 {
   "mcpServers": {
     "espn": {
-      "command": "espn-mcp-server"
+      "command": "@left-coast-tech/espn-mcp-server"
     }
   }
 }

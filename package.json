@@ -1,5 +1,5 @@
 {
-  "name": "espn-mcp-server",
+  "name": "@left-coast-tech/espn-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for accessing ESPN sports data (NFL, NHL, NBA)",
   "type": "module",
@@ -38,5 +38,8 @@
   "homepage": "https://github.com/Left-Coast-Tech/espn-mcp#readme",
   "bugs": {
     "url": "https://github.com/Left-Coast-Tech/espn-mcp/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
