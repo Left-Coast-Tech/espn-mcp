@@ -39,8 +39,9 @@ export function getScoreboardUrl(league: League, options?: { week?: number; date
  * Get standings endpoint URL
  */
 export function getStandingsUrl(league: League): string {
-  const path = getLeaguePath(league);
-  return `${SITE_BASE}/${path}/standings`;
+  const config = LEAGUE_CONFIG[league];
+  // Note: ESPN uses /apis/v2 (not /apis/site/v2) for standings
+  return `https://site.api.espn.com/apis/v2/sports/${config.sport}/${config.league}/standings`;
 }
 
 /**

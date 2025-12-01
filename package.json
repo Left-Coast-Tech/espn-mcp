@@ -1,6 +1,6 @@
 {
-  "name": "@left-coast-tech/espn-mcp-server",
-  "version": "1.0.0",
+  "name": "espn-mcp-server",
+  "version": "1.0.1",
   "description": "MCP server for accessing ESPN sports data (NFL, NHL, NBA)",
   "type": "module",
   "main": "dist/index.js",
@@ -22,10 +22,18 @@
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0",
-    "ts-node": "^10.0.0"
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
   },
-  "keywords": ["mcp", "espn", "sports", "nfl", "nhl", "nba", "claude"],
+  "keywords": [
+    "mcp",
+    "espn",
+    "sports",
+    "nfl",
+    "nhl",
+    "nba",
+    "claude"
+  ],
   "license": "MIT",
   "author": "Left Coast Tech <admin@leftcoasttech.ai>",
   "engines": {
@@ -40,6 +48,6 @@
     "url": "https://github.com/Left-Coast-Tech/espn-mcp/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   }
 }

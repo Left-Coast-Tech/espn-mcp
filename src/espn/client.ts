@@ -42,16 +42,26 @@ export class ESPNClient {
    */
   async getStandings(league: League, group?: string): Promise<StandingsResponse> {
     const url = getStandingsUrl(league);
-    const data = await this.fetch<{ children: ESPNStandingsGroup[]; season: { year: number } }>(url);
+    const data = await this.fetch<{ 
+      children: ESPNStandingsGroup[]; 
+      seasons?: { year: number }[] 
+    }>(url);
 
     const groups: StandingsGroup[] = [];
+    let season = new Date().getFullYear();
 
     for (const child of data.children || []) {
+      // Get season from the standings if available
+      if (child.standings?.season) {
+        season = child.standings.season;
+      }
+
       // Filter by group if specified
       if (group) {
         const groupLower = group.toLowerCase();
         const childNameLower = child.name.toLowerCase();
-        if (!childNameLower.includes(groupLower)) {
+        const childAbbrevLower = child.abbreviation?.toLowerCase() || "";
+        if (!childNameLower.includes(groupLower) && !childAbbrevLower.includes(groupLower)) {
           continue;
         }
       }
@@ -90,9 +100,14 @@ export class ESPNClient {
       }
     }
 
+    // Fallback to seasons array if not found in standings
+    if (season === new Date().getFullYear() && data.seasons && data.seasons.length > 0) {
+      season = data.seasons[0].year;
+    }
+
     return {
       league,
-      season: data.season?.year || new Date().getFullYear(),
+      season,
       groups,
     };
   }

@@ -225,7 +225,9 @@ export interface ESPNStandingsEntry {
 
 export interface ESPNStandingsGroup {
   name: string;
-  standings: {
+  abbreviation: string;
+  standings?: {
+    season: number;
     entries: ESPNStandingsEntry[];
   };
 }
