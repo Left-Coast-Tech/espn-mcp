@@ -1,6 +1,6 @@
 {
   "name": "espn-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for accessing ESPN sports data (NFL, NHL, NBA)",
   "type": "module",
   "main": "dist/index.js",
